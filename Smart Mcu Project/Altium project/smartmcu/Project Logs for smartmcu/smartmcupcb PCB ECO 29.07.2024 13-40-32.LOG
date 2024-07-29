@@ -1,0 +1,2 @@
+Change Component DesignItemId : Designator=Y2 Old DesignItemId=XTAL New DesignItemId=
+Change Component Library : Designator=Y2 Old Library=Miscellaneous Devices.IntLib New Library=Mylib+Rev+4.IntLib

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=S1-1
+Removed Pin From Net: NetName=NRST Pin=S1-2
+Removed Member From Class: ClassName=MCU Member=S1
+Added Component: Designator=sw1(MY_PB-SMD)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Tac switch-AS"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NRST Pin=sw1-1
+Added Pin To Net: NetName=GND Pin=sw1-2
+Added Member To Class: ClassName=MCU Member=Component sw1 SW-PB

@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=Y2 Old Footprint=R38 New Footprint=MY_RTC_Crystal
+Change component parameters: Designator = "Y2" ("Y2"); Footprint = "R38"; UniqueID = "\SQHILUSB" ("\SQHILUSB")
+Change component parameters (AddParameter): Name = "ASiD Part Number"; Value = "Crystal-AS"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=MCU Member=Component Y2 XTAL

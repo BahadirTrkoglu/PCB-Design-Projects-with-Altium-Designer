@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=l NewDesignator=R6
+Added Component: Designator=U1(4-Pin SOT)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.ti.com/lit/ds/symlink/lm1117.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "output voltage"; Value = "3.3V"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=PowerSupply Member=Component U1

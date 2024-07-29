@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=U1 Old Footprint=4-Pin SOT New Footprint=MY_SOT223
+Change Component Comment : Designator=U1 Old Comment= New Comment=LM1117
+Change component parameters: Designator = "U1" ("U1"); Footprint = "4-Pin SOT"; UniqueID = "\NDOMFXUC" ("\NDOMFXUC")
+Change component parameters (AddParameter): Name = "ASiD Part Number"; Value = "LM1117-AS"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=+3.3V Pin=U1-2
+Added Pin To Net: NetName=+3.3V Pin=U1-2
+Added Pin To Net: NetName=+9V Pin=U1-3
+Added Room: Name=MCU
+Added Room: Name=PowerSupply

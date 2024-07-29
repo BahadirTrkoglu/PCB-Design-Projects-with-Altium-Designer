@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=P3 Old Footprint=MHDR1X3 New Footprint=MY_MA03-1W
+Change Component Footprint: Designator=P2 Old Footprint=MHDR1X4 New Footprint=MY_MA04-1W
+Change Component Comment : Designator=P3 Old Comment=MHDR1X3 New Comment=Header 3
+Change Component Comment : Designator=P2 Old Comment=MHDR1X4 New Comment=Header 4
+Change component parameters: Designator = "P2" ("P2"); Footprint = "MHDR1X4"; UniqueID = "\QABPZIGK" ("\QABPZIGK")
+Change component parameters (AddParameter): Name = "ASiD Part Number"; Value = "Header 4-AS"; VariantName = "[No Variations]"
+Change component parameters: Designator = "P3" ("P3"); Footprint = "MHDR1X3"; UniqueID = "\HRSQNRMB" ("\HRSQNRMB")
+Change component parameters (AddParameter): Name = "ASiD Part Number"; Value = "Header 3-AS"; VariantName = "[No Variations]"

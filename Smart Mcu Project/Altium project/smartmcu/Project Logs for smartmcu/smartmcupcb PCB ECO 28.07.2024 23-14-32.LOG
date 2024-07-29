@@ -1,0 +1,7 @@
+Added Component: Designator=U1(MY_SOT223)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "LM1117-AS"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=+3.3V Pin=U1-2
+Added Pin To Net: NetName=+3.3V Pin=U1-2
+Added Pin To Net: NetName=+9V Pin=U1-3
+Added Member To Class: ClassName=PowerSupply Member=Component U1 LM1117

@@ -1,0 +1,509 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">1.08.2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16:57:24</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc" class="file"><acronym title="C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc">C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">39</td></tr>
+</table>
+</td>
+</table><a name="ID1MCWATLZF2MFMXNBSNPGGM5DDMA0RKLCSXQ2CNC344AIGOCUU4XD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWQTKLOHJ4IEUYN5XGMZJ5001LQUMGXD52ZIX2NXM5EGECAWZAUI">Clearance Constraint (Gap=32mil) (InNet('CommonPinRelay1')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWMYYYERGRS42ISH5HCSZRWIEQFICFYI4NAV0RHMI0N4LSE0TGHKF">Clearance Constraint (Gap=32mil) (InNet('NormalCloseRelay1')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4SVL4LQUJIDOF1N4DCQWBDKOAC3LDDCVLHHVJQGFHBQFG4CLNEYM">Clearance Constraint (Gap=12mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVEKABUVGTU1OCS5CTI0P2XFDCNAIGC502CNFF1HY2FTVT3HCV2YJ">Clearance Constraint (Gap=32mil) (InNet('NormalOpenRelay1')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID21AYYCAG0I4SG5FDKFL1CETM2BIWDCLKDE1ZEMCJKQAC4231HRVL">Clearance Constraint (Gap=32mil) (InNet('NormalOpenRelay2')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUYWMHTGJNW4ZFSOA2EKOZ4Q0UEVXYOJPGJ51TLE2TUVM0M533JH">Clearance Constraint (Gap=32mil) (InNet('NormalCloseRelay2')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTYASLLHZ3XRNNT10TQCUVDEPIP31CBMWT4RWUEHT1AU1JMVUNQSL">Clearance Constraint (Gap=32mil) (InNet('CommonPinRelay2')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJN3OY1ZVJ4Q0H43QK0OFNB3AD1WASDJIWQPPPDNWWD05PAIKKPK">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDB5U4S55FFDUAGGQUVLR5N150HEJAW1XY3SY0DGDMGMRIRKKODHSK">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ0M54TMK0ESWLCX5IW0MNNG4QPSBOIJZ4M4CTNJOGYAPOQEGOD1M">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDX0L3S110Z52OEDFUJMSRE21JZDZR5AOBEEWCALGRSJCJTYZLMGYL">Width Constraint (Min=10mil) (Max=100mil) (Preferred=16mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYHJFL0H00VDSDEUITCLPZLWO4LHSIPWTGMP0FPGSFQS1HY3YIBFM">Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalOpenRelay2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUFVZRLZGF4WYIHI4IABOUHU4VF0IQ2QCWPPL2QLKTVNTJBVHZAFG">Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalCloseRelay2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3ASJ3MJMWAABLJHAL5CMQR5LYPNNNURBDKPC0ZHJTZQVU2SWDHQK">Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('CommonPinRelay1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM5IQMCCQBWMXCWMJBITDJHY2CNR1OPM4ZX1ND5E4XGZ01UAWWWSM">Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('CommonPinRelay2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOU0MSQWR1ADXGB4EFWRSCM4ANBJ2XZFCWBCLATJORXZSXYGQCIIN">Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalOpenRelay1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYB22R3T4QYFONNRP5KSSBTU4PESH0RLHOZ1B5SHBLIER4YHDVCMJ">Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalCloseRelay1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFZMASCMOCFLJBGQA4PXGGX1S1CSYJXKQ5B34SLJFMRMKDEML2IEI">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1XMJLIARGB5GOYX3A1NV13LS3BQDXQYL0ANXL2FLCRBUW1O35UJN">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSRIS41UULSSIFIEAZBNCA52I2HIZTN1J103NXGETEYBJPUZVWMZM">Hole Size Constraint (Min=1mil) (Max=1000mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPNPXBOOG4QKXP3I5L1MHQ33DYG24LL43DXLGRQPYJOG2H1QAOS0C">Hole To Hole Clearance (Gap=6mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAZPSVJSIRWS0P35DCKXSHJNEADPIDT3KR1RTNTIMPZFMSRK4XANG">Minimum Solder Mask Sliver (Gap=3mil) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNNGBMEF5IASIISLZIIQWUCDAEIU2VGHGTVNOZWKT0ER350RDJGVH">Silk To Solder Mask (Clearance=1mil) (IsPad),(All)</a></td>
+<td class="column2">27</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJHLSDVGIG0RKL5XLOFU5SEFIDC5AVVFQY01B20J35X0Z5M00JP">Silk to Silk (Clearance=1mil) (All),(All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXVDIAB2ENRTUGAG0EGYHSFFFMJIBCPEYEYRXEGJJZNEXMUMKKKH">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMAVCLTKMESCZCTW524P250OGPJDDEA0UARTPNLC1UWOZVCSSCCYI">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">39</td>
+</tr>
+</table><br><a name="IDAZPSVJSIRWS0P35DCKXSHJNEADPIDT3KR1RTNTIMPZFMSRK4XANG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=3mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3234.095mil|Location2.X=3238.345mil|Location1.Y=2691.773mil|Location2.Y=2696.023mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3234.095mil|Location2.X=3238.345mil|Location1.Y=2691.773mil|Location2.Y=2696.023mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (1.842mil &lt; 3mil) Between Pad C3-2(2266.732mil,1693.898mil) on Bottom Layer And Via (2211.614mil,1693.898mil) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [1.842mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNNGBMEF5IASIISLZIIQWUCDAEIU2VGHGTVNOZWKT0ER350RDJGVH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=1mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2882.167mil|Location2.X=2883.833mil|Location1.Y=3284.6mil|Location2.Y=3286.266mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2882.167mil|Location2.X=2883.833mil|Location1.Y=3284.6mil|Location2.Y=3286.266mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad C1-1(1884.842mil,2253.937mil) on Bottom Layer And Text "C2" (1883mil,2246mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2783.615mil|Location2.X=2785.282mil|Location1.Y=3245.167mil|Location2.Y=3246.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2783.615mil|Location2.X=2785.282mil|Location1.Y=3245.167mil|Location2.Y=3246.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad C1-2(1810.039mil,2253.937mil) on Bottom Layer And Text "C2" (1883mil,2246mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4214.134mil|Location2.X=4215.801mil|Location1.Y=4245.147mil|Location2.Y=4246.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4214.134mil|Location2.X=4215.801mil|Location1.Y=4245.147mil|Location2.Y=4246.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad sw1-1(3246.063mil,3240.158mil) on Top Layer And Text "C5" (3115mil,3186mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.332mil|Location2.X=2772.999mil|Location1.Y=3034.6mil|Location2.Y=3036.266mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.332mil|Location2.X=2772.999mil|Location1.Y=3034.6mil|Location2.Y=3036.266mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-1(1802.165mil,2045.276mil) on Top Layer And Track (1620.079mil,2035.433mil)(1776.575mil,2035.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3038.537mil|Location2.Y=3040.203mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3038.537mil|Location2.Y=3040.203mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-1(1802.165mil,2045.276mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.332mil|Location2.X=2772.999mil|Location1.Y=3284.6mil|Location2.Y=3286.266mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.332mil|Location2.X=2772.999mil|Location1.Y=3284.6mil|Location2.Y=3286.266mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-10(1802.165mil,2277.559mil) on Top Layer And Track (1620.079mil,2285.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3270.82mil|Location2.Y=3272.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3270.82mil|Location2.Y=3272.487mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-10(1802.165mil,2277.559mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3269.836mil|Location2.Y=3271.503mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3269.836mil|Location2.Y=3271.503mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-11(1597.441mil,2276.575mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2626.608mil|Location2.X=2628.274mil|Location1.Y=3284.6mil|Location2.Y=3286.266mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2626.608mil|Location2.X=2628.274mil|Location1.Y=3284.6mil|Location2.Y=3286.266mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-11(1597.441mil,2276.575mil) on Top Layer And Track (1620.079mil,2285.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3245.23mil|Location2.Y=3246.896mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3245.23mil|Location2.Y=3246.896mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-12(1597.441mil,2251.968mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3218.655mil|Location2.Y=3220.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3218.655mil|Location2.Y=3220.322mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-13(1597.441mil,2225.394mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3193.064mil|Location2.Y=3194.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3193.064mil|Location2.Y=3194.731mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-14(1597.441mil,2199.803mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3167.474mil|Location2.Y=3169.14mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3167.474mil|Location2.Y=3169.14mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-15(1597.441mil,2174.213mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3142.867mil|Location2.Y=3144.534mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3142.867mil|Location2.Y=3144.534mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-16(1597.441mil,2149.606mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3116.293mil|Location2.Y=3117.959mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3116.293mil|Location2.Y=3117.959mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-17(1597.441mil,2123.032mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3090.702mil|Location2.Y=3092.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3090.702mil|Location2.Y=3092.369mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-18(1597.441mil,2097.441mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3065.112mil|Location2.Y=3066.778mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3065.112mil|Location2.Y=3066.778mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-19(1597.441mil,2071.85mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3064.127mil|Location2.Y=3065.794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3064.127mil|Location2.Y=3065.794mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-2(1802.165mil,2070.866mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3038.537mil|Location2.Y=3040.203mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.245mil|Location2.X=2620.912mil|Location1.Y=3038.537mil|Location2.Y=3040.203mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-20(1597.441mil,2045.276mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2626.608mil|Location2.X=2628.274mil|Location1.Y=3034.6mil|Location2.Y=3036.266mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2626.608mil|Location2.X=2628.274mil|Location1.Y=3034.6mil|Location2.Y=3036.266mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-20(1597.441mil,2045.276mil) on Top Layer And Track (1620.079mil,2035.433mil)(1776.575mil,2035.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3089.718mil|Location2.Y=3091.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3089.718mil|Location2.Y=3091.385mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-3(1802.165mil,2096.457mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3115.308mil|Location2.Y=3116.975mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3115.308mil|Location2.Y=3116.975mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-4(1802.165mil,2122.047mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3140.899mil|Location2.Y=3142.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3140.899mil|Location2.Y=3142.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-5(1802.165mil,2147.638mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3167.474mil|Location2.Y=3169.14mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3167.474mil|Location2.Y=3169.14mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-6(1802.165mil,2174.213mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3193.064mil|Location2.Y=3194.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3193.064mil|Location2.Y=3194.731mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-7(1802.165mil,2199.803mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3218.655mil|Location2.Y=3220.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3218.655mil|Location2.Y=3220.322mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-8(1802.165mil,2225.394mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3243.261mil|Location2.Y=3244.928mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2775.742mil|Location2.X=2777.408mil|Location1.Y=3243.261mil|Location2.Y=3244.928mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 1mil) Between Pad U1-9(1802.165mil,2250mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJHLSDVGIG0RKL5XLOFU5SEFIDC5AVVFQY01B20J35X0Z5M00JP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=1mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2782.199mil|Location2.X=2783.866mil|Location1.Y=3245.167mil|Location2.Y=3246.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2782.199mil|Location2.X=2783.866mil|Location1.Y=3245.167mil|Location2.Y=3246.833mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "C2" (1883mil,2246mil) on Bottom Overlay And Track (1776.441mil,2213.937mil)(1776.441mil,2293.937mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2842.18mil|Location2.X=2843.846mil|Location1.Y=3295.151mil|Location2.Y=3296.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2842.18mil|Location2.X=2843.846mil|Location1.Y=3295.151mil|Location2.Y=3296.817mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "C2" (1883mil,2246mil) on Bottom Overlay And Track (1776.441mil,2293.937mil)(1918.441mil,2293.937mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.167mil|Location2.X=1550.833mil|Location1.Y=3728.667mil|Location2.Y=3730.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.167mil|Location2.X=1550.833mil|Location1.Y=3728.667mil|Location2.Y=3730.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "D2" (545.705mil,2724.712mil) on Top Overlay And Track (550mil,2729.5mil)(1190mil,2729.5mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.167mil|Location2.X=1550.833mil|Location1.Y=3731.167mil|Location2.Y=3732.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.167mil|Location2.X=1550.833mil|Location1.Y=3731.167mil|Location2.Y=3732.833mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "D2" (545.705mil,2724.712mil) on Top Overlay And Track (550mil,2732mil)(550mil,3531mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2423.167mil|Location2.X=2424.833mil|Location1.Y=3698.951mil|Location2.Y=3700.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2423.167mil|Location2.X=2424.833mil|Location1.Y=3698.951mil|Location2.Y=3700.617mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "D4" (1424mil,2661.378mil) on Top Overlay And Text "D5" (1325mil,2689mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2324.167mil|Location2.X=2325.833mil|Location1.Y=3728.391mil|Location2.Y=3730.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2324.167mil|Location2.X=2325.833mil|Location1.Y=3728.391mil|Location2.Y=3730.058mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "D5" (1325mil,2689mil) on Top Overlay And Track (1261.209mil,2729.224mil)(1901.209mil,2729.224mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.663mil|Location2.X=2143.329mil|Location1.Y=3703.883mil|Location2.Y=3705.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.663mil|Location2.X=2143.329mil|Location1.Y=3703.883mil|Location2.Y=3705.55mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "K1" (1142.496mil,2684.663mil) on Top Overlay And Text "R9" (1084mil,2700mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2275.175mil|Location2.X=2276.842mil|Location1.Y=4606.799mil|Location2.Y=4608.466mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2275.175mil|Location2.X=2276.842mil|Location1.Y=4606.799mil|Location2.Y=4608.466mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "P3" (1276.008mil,3571.502mil) on Top Overlay And Track (1269mil,3615mil)(1870mil,3615mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2083.167mil|Location2.X=2084.833mil|Location1.Y=3728.667mil|Location2.Y=3730.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2083.167mil|Location2.X=2084.833mil|Location1.Y=3728.667mil|Location2.Y=3730.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 1mil) Between Text "R9" (1084mil,2700mil) on Top Overlay And Track (550mil,2729.5mil)(1190mil,2729.5mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDXVDIAB2ENRTUGAG0EGYHSFFFMJIBCPEYEYRXEGJJZNEXMUMKKKH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1290.02mil|Location2.X=1354.285mil|Location1.Y=3674.311mil|Location2.Y=3776.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1290.02mil|Location2.X=1354.285mil|Location1.Y=3674.311mil|Location2.Y=3776.724mil|Absolute=True">Net Antennae: Via (317.205mil,2701.496mil) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.618mil|Location2.X=1098.454mil|Location1.Y=3070.847mil|Location2.Y=3192.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1022.618mil|Location2.X=1098.454mil|Location1.Y=3070.847mil|Location2.Y=3192.803mil|Absolute=True">Net Antennae: Via (55.118mil,2103.347mil) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=D1 Old Footprint=My_DO41 New Footprint=MY_1N4007_SMD
+Change Component Designator: OldDesignator=GND NewDesignator=TP3
+Change Component Designator: OldDesignator=GND NewDesignator=TP4
+Added Member To Class: ClassName=MasterRelayModule Member=Component TP4 GND
+Added Rule: Name=Schematic Width Constraint_6

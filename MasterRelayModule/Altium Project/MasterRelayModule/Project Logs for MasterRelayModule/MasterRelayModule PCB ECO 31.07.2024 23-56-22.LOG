@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=CommonPinRelay1 Pin=K2-1
+Added Pin To Net: NetName=CommonPinRelay2 Pin=K2-1

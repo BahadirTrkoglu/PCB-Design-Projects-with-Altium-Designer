@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=NetD3_K Pin=R5-1
+Removed Pin From Net: NetName=ESPRXD Pin=U1-2
+Removed Pin From Net: NetName=ESPTXD Pin=U1-3
+Removed Pin From Net: NetName=NetD3_K Pin=U3-6
+Removed Pin From Net: NetName=NetR4_1 Pin=U3-7
+Change Component Designator: OldDesignator=GND NewDesignator=TP4
+Added Pin To Net: NetName=NetR4_1 Pin=U3-13
+Added Pin To Net: NetName=HSPI_CLK Pin=U1-15
+Added Pin To Net: NetName=HSPI_CLK Pin=U3-5
+Added Net: Name=HSPI_CLK
+Added Pin To Net: NetName=HSPI_MISO Pin=U1-17
+Added Pin To Net: NetName=HSPI_MISO Pin=U3-6
+Added Net: Name=HSPI_MISO
+Added Pin To Net: NetName=HSPI_MOSI Pin=U1-16
+Added Pin To Net: NetName=HSPI_MOSI Pin=U3-7
+Added Net: Name=HSPI_MOSI
+Added Pin To Net: NetName=HSPICS Pin=U1-1
+Added Pin To Net: NetName=HSPICS Pin=U3-10
+Added Net: Name=HSPICS
+Added Pin To Net: NetName=MCU_RXD Pin=U1-3
+Added Net: Name=MCU_RXD
+Added Pin To Net: NetName=MCU_TXD Pin=U1-2
+Added Net: Name=MCU_TXD
+Added Pin To Net: NetName=NetR5_1 Pin=R5-1
+Added Pin To Net: NetName=NetR5_1 Pin=U3-12
+Added Net: Name=NetR5_1

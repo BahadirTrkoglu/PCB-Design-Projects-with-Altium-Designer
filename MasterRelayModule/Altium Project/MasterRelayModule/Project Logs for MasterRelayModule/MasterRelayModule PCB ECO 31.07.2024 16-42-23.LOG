@@ -1,0 +1,16 @@
+Added Component: Designator=P6(My_1X04)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Header 4-AS"; VariantName = "[No Variations]"
+Added Component: Designator=sw3(MY_PB-SMD)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Tac switch-AS"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=P6-1
+Added Pin To Net: NetName=GND Pin=P6-2
+Added Pin To Net: NetName=NetR4_1 Pin=sw3-1
+Added Pin To Net: NetName=GND Pin=sw3-2
+Added Pin To Net: NetName=MCUSCL Pin=P6-3
+Added Pin To Net: NetName=MCUSCL Pin=U1-12
+Added Net: Name=MCUSCL
+Added Pin To Net: NetName=MCUSDA Pin=P6-4
+Added Pin To Net: NetName=MCUSDA Pin=U1-11
+Added Net: Name=MCUSDA
+Added Member To Class: ClassName=MasterRelayModule Member=Component P6 Header 4
+Added Member To Class: ClassName=MasterRelayModule Member=Component sw3 Tac switch

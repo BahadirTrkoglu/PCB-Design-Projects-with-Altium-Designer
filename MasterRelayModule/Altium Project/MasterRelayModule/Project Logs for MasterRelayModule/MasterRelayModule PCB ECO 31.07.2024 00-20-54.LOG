@@ -1,0 +1,12 @@
+Added Component: Designator=S1(MY_PAD_3MM)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Screw-AS"; VariantName = "[No Variations]"
+Added Component: Designator=S2(MY_PAD_3MM)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Screw-AS"; VariantName = "[No Variations]"
+Added Component: Designator=S3(MY_PAD_3MM)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Screw-AS"; VariantName = "[No Variations]"
+Added Component: Designator=S4(MY_PAD_3MM)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Screw-AS"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=MasterRelayModule Member=Component S1 Screw
+Added Member To Class: ClassName=MasterRelayModule Member=Component S2 Screw
+Added Member To Class: ClassName=MasterRelayModule Member=Component S3 Screw
+Added Member To Class: ClassName=MasterRelayModule Member=Component S4 Screw

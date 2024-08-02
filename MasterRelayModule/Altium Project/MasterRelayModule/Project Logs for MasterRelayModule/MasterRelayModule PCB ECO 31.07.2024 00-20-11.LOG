@@ -1,0 +1,16 @@
+Added Component: Designator=TP1(MY_TestPin)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Test Point-AS"; VariantName = "[No Variations]"
+Added Component: Designator=TP2(MY_TestPin)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Test Point-AS"; VariantName = "[No Variations]"
+Added Component: Designator=TP3(MY_TestPin)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Test Point-AS"; VariantName = "[No Variations]"
+Added Component: Designator=TP4(MY_TestPin)
+Add component (AddParameter): Name = "ASiD Part Number"; Value = "Test Point-AS"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=TP1-1
+Added Pin To Net: NetName=3.3V Pin=TP2-1
+Added Pin To Net: NetName=GND Pin=TP3-1
+Added Pin To Net: NetName=GND Pin=TP4-1
+Added Member To Class: ClassName=MasterRelayModule Member=Component TP1 5V
+Added Member To Class: ClassName=MasterRelayModule Member=Component TP2 3.3V
+Added Member To Class: ClassName=MasterRelayModule Member=Component TP3 GND
+Added Member To Class: ClassName=MasterRelayModule Member=Component TP4 GND

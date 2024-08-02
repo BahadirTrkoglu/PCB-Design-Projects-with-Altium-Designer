@@ -1,0 +1,126 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\AsusRogStrix\Desktop\PCB_project\MasterRelayModule\Altium Project\MasterRelayModule\MasterRelayModule.PcbDoc
+Date     : 1.08.2024
+Time     : 16:57:24
+
+Processing Rule : Clearance Constraint (Gap=32mil) (InNet('CommonPinRelay1')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=32mil) (InNet('NormalCloseRelay1')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=12mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=32mil) (InNet('NormalOpenRelay1')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=32mil) (InNet('NormalOpenRelay2')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=32mil) (InNet('NormalCloseRelay2')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=32mil) (InNet('CommonPinRelay2')),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=10mil) (Max=100mil) (Preferred=16mil) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalOpenRelay2'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalCloseRelay2'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('CommonPinRelay1'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('CommonPinRelay2'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalOpenRelay1'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=80mil) (Max=1000mil) (Preferred=80mil) (InNet('NormalCloseRelay1'))
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=1000mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=6mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=3mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (1.842mil < 3mil) Between Pad C3-2(2266.732mil,1693.898mil) on Bottom Layer And Via (2211.614mil,1693.898mil) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [1.842mil]
+Rule Violations :1
+
+Processing Rule : Silk To Solder Mask (Clearance=1mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad C1-1(1884.842mil,2253.937mil) on Bottom Layer And Text "C2" (1883mil,2246mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad C1-2(1810.039mil,2253.937mil) on Bottom Layer And Text "C2" (1883mil,2246mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad sw1-1(3246.063mil,3240.158mil) on Top Layer And Text "C5" (3115mil,3186mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-1(1802.165mil,2045.276mil) on Top Layer And Track (1620.079mil,2035.433mil)(1776.575mil,2035.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-1(1802.165mil,2045.276mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-10(1802.165mil,2277.559mil) on Top Layer And Track (1620.079mil,2285.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-10(1802.165mil,2277.559mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-11(1597.441mil,2276.575mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-11(1597.441mil,2276.575mil) on Top Layer And Track (1620.079mil,2285.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-12(1597.441mil,2251.968mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-13(1597.441mil,2225.394mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-14(1597.441mil,2199.803mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-15(1597.441mil,2174.213mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-16(1597.441mil,2149.606mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-17(1597.441mil,2123.032mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-18(1597.441mil,2097.441mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-19(1597.441mil,2071.85mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-2(1802.165mil,2070.866mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-20(1597.441mil,2045.276mil) on Top Layer And Track (1620.079mil,2035.433mil)(1620.079mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-20(1597.441mil,2045.276mil) on Top Layer And Track (1620.079mil,2035.433mil)(1776.575mil,2035.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-3(1802.165mil,2096.457mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-4(1802.165mil,2122.047mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-5(1802.165mil,2147.638mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-6(1802.165mil,2174.213mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-7(1802.165mil,2199.803mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-8(1802.165mil,2225.394mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 1mil) Between Pad U1-9(1802.165mil,2250mil) on Top Layer And Track (1776.575mil,2035.433mil)(1776.575mil,2285.433mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+Rule Violations :27
+
+Processing Rule : Silk to Silk (Clearance=1mil) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "C2" (1883mil,2246mil) on Bottom Overlay And Track (1776.441mil,2213.937mil)(1776.441mil,2293.937mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "C2" (1883mil,2246mil) on Bottom Overlay And Track (1776.441mil,2293.937mil)(1918.441mil,2293.937mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "D2" (545.705mil,2724.712mil) on Top Overlay And Track (550mil,2729.5mil)(1190mil,2729.5mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "D2" (545.705mil,2724.712mil) on Top Overlay And Track (550mil,2732mil)(550mil,3531mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "D4" (1424mil,2661.378mil) on Top Overlay And Text "D5" (1325mil,2689mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "D5" (1325mil,2689mil) on Top Overlay And Track (1261.209mil,2729.224mil)(1901.209mil,2729.224mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "K1" (1142.496mil,2684.663mil) on Top Overlay And Text "R9" (1084mil,2700mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "P3" (1276.008mil,3571.502mil) on Top Overlay And Track (1269mil,3615mil)(1870mil,3615mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 1mil) Between Text "R9" (1084mil,2700mil) on Top Overlay And Track (550mil,2729.5mil)(1190mil,2729.5mil) on Top Overlay Silk Text to Silk Clearance [0mil]
+Rule Violations :9
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+   Violation between Net Antennae: Via (317.205mil,2701.496mil) from Top Layer to Bottom Layer 
+   Violation between Net Antennae: Via (55.118mil,2103.347mil) from Top Layer to Bottom Layer 
+Rule Violations :2
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 39
+Waived Violations : 0
+Time Elapsed        : 00:00:01
